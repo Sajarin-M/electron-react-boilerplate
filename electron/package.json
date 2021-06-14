@@ -1,0 +1,13 @@
+{
+    "version": "1.0.0",
+    "description": "",
+    "main": "./src/main.js",
+    "scripts": {
+        "start": "nodemon --exec electron . --watch ./src/main.js"
+    },
+    "license": "ISC",
+    "devDependencies": {
+        "electron": "^13.0.1",
+        "nodemon": "^2.0.7"
+    }
+}

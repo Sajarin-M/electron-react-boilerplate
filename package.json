@@ -1,0 +1,13 @@
+{
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "electron": "npm run start --prefix ./electron",
+        "react": "npm run start --prefix ./react",
+        "start": "npm run react | npm run electron"
+    },
+    "keywords": [],
+    "author": "Sajarin M",
+    "license": "ISC"
+}
