@@ -1,13 +1,13 @@
 {
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "electron": "npm run start --prefix ./electron",
-        "react": "npm run start --prefix ./react",
-        "start": "npm run react | npm run electron"
-    },
-    "keywords": [],
-    "author": "Sajarin M",
-    "license": "ISC"
+  "version": "1.0.0",
+  "description": "",
+  "main": "./src-electron/main.js",
+  "scripts": {
+    "start-react": "webpack --config webpack.dev.js --watch",
+    "start-electron": "nodemon --exec electron . --watch src-electron",
+    "install-deps": "npm i --save-dev electron nodemon @babel/core @babel/preset-env @babel/preset-react babel-loader css-loader sass sass-loader style-loader webpack webpack-cli && npm i --save react react-dom"
+  },
+  "license": "ISC",
+  "devDependencies": {},
+  "dependencies": {}
 }
