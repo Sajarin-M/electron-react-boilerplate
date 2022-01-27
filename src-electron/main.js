@@ -1,7 +1,12 @@
 const { app, BrowserWindow } = require("electron");
 const path = require("path");
+const isDev = !app.isPackaged;
 
 let mainWindow;
+
+if (isDev) {
+  require("electron-reloader")(module);
+}
 
 function createWindow() {
   mainWindow = new BrowserWindow({
@@ -14,6 +19,12 @@ function createWindow() {
       preload: path.join(__dirname, "preload.js"),
     },
   });
+
+  if (isDev) {
+    mainWindow.webContents.openDevTools();
+  } else {
+    mainWindow.removeMenu();
+  }
 
   mainWindow.loadFile(path.join(__dirname, "..", "index.html"));
 

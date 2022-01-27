@@ -7,7 +7,7 @@
     "start-electron": "electron .",
     "build-react": "webpack --config webpack.prod.js",
     "build-app": "npm run build-react && electron-builder --win --x64",
-    "install-deps": "npm i --save-dev electron nodemon @babel/core @babel/preset-env @babel/preset-react babel-loader css-loader sass sass-loader style-loader webpack webpack-cli webpack-merge electron-builder && npm i --save react react-dom"
+    "install-deps": "npm i --save-dev electron nodemon @babel/core @babel/preset-env @babel/preset-react babel-loader css-loader sass sass-loader style-loader webpack webpack-cli webpack-merge electron-builder electron-reloader && npm i --save react react-dom"
   },
   "license": "ISC",
   "build": {
