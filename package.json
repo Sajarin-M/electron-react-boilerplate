@@ -4,10 +4,26 @@
   "main": "./src-electron/main.js",
   "scripts": {
     "start-react": "webpack --config webpack.dev.js --watch",
-    "start-electron": "nodemon --exec electron . --watch src-electron",
-    "install-deps": "npm i --save-dev electron nodemon @babel/core @babel/preset-env @babel/preset-react babel-loader css-loader sass sass-loader style-loader webpack webpack-cli && npm i --save react react-dom"
+    "start-electron": "electron .",
+    "build-react": "webpack --config webpack.prod.js",
+    "build-app": "npm run build-react && electron-builder --win --x64",
+    "install-deps": "npm i --save-dev electron nodemon @babel/core @babel/preset-env @babel/preset-react babel-loader css-loader sass sass-loader style-loader webpack webpack-cli webpack-merge electron-builder && npm i --save react react-dom"
   },
   "license": "ISC",
+  "build": {
+    "productName": "electron-react-app",
+    "appId": "com.electron.react.app",
+    "files": [
+      "build/**/*",
+      "src-electron/**/*",
+      "index.html"
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ]
+    }
+  },
   "devDependencies": {},
   "dependencies": {}
 }
