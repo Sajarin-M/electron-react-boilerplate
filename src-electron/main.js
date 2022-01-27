@@ -15,7 +15,7 @@ function createWindow() {
     },
   });
 
-  mainWindow.loadFile(path.join(__dirname, "..", "build", "index.html"));
+  mainWindow.loadFile(path.join(__dirname, "..", "index.html"));
 
   mainWindow.webContents.openDevTools();
 
